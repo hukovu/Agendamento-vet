@@ -1,62 +1,121 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    width: 80%;
-    margin: 50px auto;
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+body{
+    background-image: url("bg.svg ")
 }
 
-h1 {
-    text-align: center;
-    color: #333;
+header{
+    box-shadow: 0px 3px 5px #cacbcc;
+    background: #f4f4f5;
+    
+    
 }
 
-form {
-    max-width: 500px;
-    margin: 0 auto;
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 10px 30px;
 }
 
-.question {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 6px;
-    margin-bottom: 20px;
+.logo img{
+    max-width: 125px;
+    height: auto;
+    
+    
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
+.navTitulo h1, h2 {
+    font-size: 20px;
+    color: rgb(38, 36, 36);
+
+    
+    
+}
+
+.navList{
+    display: flex;
+    align-items: center;
+    
+}
+
+.navList ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.navItem{
+    margin: 0 15px;
+}
+
+.navItem a:hover {
+    color: #ff0000;
     font-weight: bold;
+    transition: color 0.9s;
 }
 
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+.navLink{
+    text-decoration: none;
+    color: rgb(100, 95, 95);
+    font-weight: 400;
+    font-size: 12px;
 }
 
-input[type="submit"] {
-    width: 100%;
+.navButton button a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+
+}
+.navButton button:hover{
+    background: #32ad80;
+    transition: 1s;
+
+}
+
+.mobileMenuIcon{
+    display: none;
+}
+
+.mobileMenu{
+    display: none;
+}
+
+h3{
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+form{
+    margin:  15px auto;
+    width: 700px;
+    background-color: #3F893D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 22px;
+    color: #fff;
+}
+
+input{
+    width: 250px;
+}
+
+.input{
+margin: 10px auto;
+display: flex;
+flex-direction: column;
+}
+
+button{
+    border-radius: 22px;
     padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-input[type="submit"]:hover {
-    background-color: #45a049;
-}

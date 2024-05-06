@@ -1,45 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento de Consultas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Agendamento de Consultas</h1>
-        <form action="agendar_consulta.py" method="post">
-            <div class="question">
-                <label for="data">Data da Consulta:</label>
-                <input type="date" id="data" name="data" required>
+    <header>
+        <nav class="navBar">
+            <div class="logo">
+                <img src="logo.svg" alt="logo-uniesp">
+                
             </div>
-            <div class="question">
-                <label for="nome">Nome Completo:</label>
-                <input type="text" id="nome" name="nome" required>
+
+            <div class="navTitulo">
+                <h1>Uniesp</h1>
+                <h2>Clínica Veterinária</h2>
             </div>
-            <div class="question">
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" required>
+
+            <div class="navList">
+                <ul>
+                    <li class="navItem"><a href="#" class="navLink">HOME</a></li>
+                    <li class="navItem"><a href="../src/pages/servicos.html" class="navLink">NOSSOS SERVIÇOS</a></li>
+                    <li class="navItem"><a href="#" class="navLink">SOBRE A CLÍNICA</a></li>
+                    <li class="navItem"><a href="#" class="navLink">ENTRE EM CONTATO</a></li>
+                    <li class="navItem"><a href="#" class="navLink">AGENDE AGORA</a></li>
+                </ul>
+                
             </div>
-            <div class="question">
-                <label for="raca">Raça do Animal:</label>
-                <input type="text" id="raca" name="raca" required>
+
+            <div class="mobileMenuIcon">
+                <button onclick="menuShow()"><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
-            <div class="question">
-                <label for="porte">Porte do Animal:</label>
-                <input type="text" id="porte" name="porte" required>
+        </nav>
+
+        <div class="mobileMenu">
+            <ul>
+                <li class="navItem"><a href="#" class="navLink">Home</a></li>
+                <li class="navItem"><a href="#" class="navLink">Clinica Veterinaria</a></li>
+                <li class="navItem"><a href="#" class="navLink">Contato</a></li>
+            </ul>
+
+            <div class="navButton">
+                <button><a href="#">Entrar</a></button>
             </div>
-            <div class="question">
-                <label for="vacinas">Carteira de Vacinação em Dia? (Sim/Não):</label>
-                <input type="text" id="vacinas" name="vacinas" required>
-            </div>
-            <div class="question">
-                <label for="idade">Idade do Animal (em meses):</label>
-                <input type="text" id="idade" name="idade" required>
-            </div>
-            <input type="submit" value="Agendar Consulta">
-        </form>
-    </div>
+        </div>
+    </header>
+    <main><form action="">
+        <h3>Agendamento de consultas</h3>
+        <div class="input"><label for="">Nome:</label>
+        <input type="text" name="" id=""></div>
+        <div class="input"><label for="">CPF ou numero de matrícula:</label>
+        <input type="text" name="" id=""></div>
+        <div class="input"><label for="">E-mail:</label>
+        <input type="text" name="" id=""></div>
+        <div class="input"><label for="">Número para contato:</label>
+        <input type="text" name="" id=""></div>
+        <div class="input"><label for="">Horário desejado:</label>
+        <input type="time" name="" id=""></div>
+        <div class="input"><label for="">Carteira de Vacinação:</label>
+        <input type="file" name="" id=""></div>
+        <div class="input"><label for="">Dia desejado:</label>
+        <input type="date" name="" id=""></div>
+        
+        
+        <button>Agendar consulta</button>
+    </form></main>
 </body>
 </html>
