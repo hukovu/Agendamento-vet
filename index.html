@@ -50,22 +50,23 @@
     <main><form action="">
         <h3>Agendamento de consultas</h3>
         <div class="input"><label for="">Nome:</label>
-        <input type="text" name="" id=""></div>
+        <input type="text" name="" id="nome"></div>
         <div class="input"><label for="">CPF ou numero de matrícula:</label>
-        <input type="text" name="" id=""></div>
+        <input type="text" name="" id="cpf"></div>
         <div class="input"><label for="">E-mail:</label>
-        <input type="text" name="" id=""></div>
+        <input type="text" name="" id="e-mail"></div>
         <div class="input"><label for="">Número para contato:</label>
-        <input type="text" name="" id=""></div>
+        <input type="text" name="" id="telefone"></div>
         <div class="input"><label for="">Horário desejado:</label>
-        <input type="time" name="" id=""></div>
+        <input type="time" name="" id="horario"></div>
         <div class="input"><label for="">Carteira de Vacinação:</label>
-        <input type="file" name="" id=""></div>
+        <input type="file" name="" id="vacinas"></div>
         <div class="input"><label for="">Dia desejado:</label>
-        <input type="date" name="" id=""></div>
+        <input type="date" name="" id="data"></div>
         
         
-        <button>Agendar consulta</button>
+        <button onclick="validarFormulario()"  type="button">Agendar consulta</button>
     </form></main>
+    <script src="./agenda.js"></script>
 </body>
 </html>

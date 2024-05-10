@@ -1,26 +1,22 @@
 
 function validarFormulario() {
-    var data = document.getElementById("data").value;
-    var nome = document.getElementById("nome").value;
-    var cpf = document.getElementById("cpf").value;
-    var raca = document.getElementById("raca").value;
-    var vacinas = document.getElementById("vacinas").value;
-    var idade = document.getElementById("idade").value;
+    var agendamendoto = {}
+    agendamendoto.data = document.getElementById("data").value;
+    agendamendoto.nome = document.getElementById("nome").value;
+    agendamendoto.cpf = document.getElementById("cpf").value;
+    agendamendoto.vacinas = document.getElementById("vacinas").value;
+    agendamendoto.telefone = document.getElementById("telefone").value;
+    agendamendoto.email = document.getElementById("e-mail").value;
+    agendamendoto.horario = document.getElementById("horario").value;
 
     // Adicione aqui suas condições de validação, por exemplo:
-    if (data === "" || nome === "" || cpf === "" || raca === "" || vacinas === "" || idade === "") {
+    if (agendamendoto.data === "" || agendamendoto.nome === "" || agendamendoto.cpf === "" || agendamendoto.vacinas === "" || agendamendoto.telefone ==="" || agendamendoto.email ==="" || agendamendoto.horario ==="" ) {
         alert("Por favor, preencha todos os campos.");
         return false;
     }
 
-    // Exibir os dados no console para verificação
-    console.log("Dados do Formulário:");
-    console.log("Data da Consulta:", data);
-    console.log("Nome Completo:", nome);
-    console.log("CPF:", cpf);
-    console.log("Raça do Animal:", raca);
-    console.log("Carteira de Vacinação em Dia?", vacinas);
-    console.log("Idade do Animal (em meses):", idade);
+   
+    console.log(agendamendoto)
 
     return true; // Se todas as validações passarem, o formulário será enviado.
 }
