@@ -8,9 +8,10 @@ function validarFormulario() {
     agendamendoto.telefone = document.getElementById("telefone").value;
     agendamendoto.email = document.getElementById("e-mail").value;
     agendamendoto.horario = document.getElementById("horario").value;
+    agendamendoto.nomepet = document.getElementById("nomepet").value;
 
     // Adicione aqui suas condições de validação, por exemplo:
-    if (agendamendoto.data === "" || agendamendoto.nome === "" || agendamendoto.cpf === "" || agendamendoto.vacinas === "" || agendamendoto.telefone ==="" || agendamendoto.email ==="" || agendamendoto.horario ==="" ) {
+    if (agendamendoto.data === "" || agendamendoto.nome === "" || agendamendoto.cpf === "" || agendamendoto.vacinas === "" || agendamendoto.telefone ==="" || agendamendoto.email ==="" || agendamendoto.horario ==="" || agendamendoto.nomepet ==="") {
         alert("Por favor, preencha todos os campos.");
         return false;
     }
