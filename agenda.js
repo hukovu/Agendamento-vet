@@ -1,23 +1,30 @@
 
 function validarFormulario() {
-    var agendamendoto = {}
-    agendamendoto.data = document.getElementById("data").value;
-    agendamendoto.nome = document.getElementById("nome").value;
-    agendamendoto.cpf = document.getElementById("cpf").value;
-    agendamendoto.vacinas = document.getElementById("vacinas").value;
-    agendamendoto.telefone = document.getElementById("telefone").value;
-    agendamendoto.email = document.getElementById("e-mail").value;
-    agendamendoto.horario = document.getElementById("horario").value;
-    agendamendoto.nomepet = document.getElementById("nomepet").value;
+    var agendamento = {}
+    agendamento.data = document.getElementById("data").value;
+    agendamento.nome = document.getElementById("nome").value;
+    agendamento.cpf = document.getElementById("cpf").value;
+    agendamento.vacinas = document.getElementById("vacinas").value;
+    agendamento.telefone = document.getElementById("telefone").value;
+    agendamento.email = document.getElementById("e-mail").value;
+    agendamento.horario = document.getElementById("horario").value;
+    agendamento.nomepet = document.getElementById("nomepet").value;
 
     // Adicione aqui suas condições de validação, por exemplo:
-    if (agendamendoto.data === "" || agendamendoto.nome === "" || agendamendoto.cpf === "" || agendamendoto.vacinas === "" || agendamendoto.telefone ==="" || agendamendoto.email ==="" || agendamendoto.horario ==="" || agendamendoto.nomepet ==="") {
+    if (agendamento.data === "" || agendamento.nome === "" || agendamento.cpf === "" || agendamento.vacinas === "" || agendamento.telefone ==="" || agendamento.email ==="" || agendamento.horario ==="" || agendamento.nomepet ==="") {
         alert("Por favor, preencha todos os campos.");
         return false;
     }
+// Pegar agendamentos existentes do localStorage
+    var agendamentos = JSON.parse(localStorage.getItem('agendamentos') || 'Sem Agendamentos');
+    
+    // Adicionar o novo agendamento
+    agendamentos.push(agendamento);
+    
+    // Armazenar de volta no localStorage
+    localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
 
-   
-    console.log(agendamendoto)
+    console.log(agendamentos);
 
     return true; // Se todas as validações passarem, o formulário será enviado.
 }
