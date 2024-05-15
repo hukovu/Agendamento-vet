@@ -22,11 +22,11 @@
             <div class="navList">
                 <ul>
                     <li class="navItem"><a href="#" class="navLink">HOME</a></li>
-                    <li class="navItem"><a href="../src/pages/servicos.html" class="navLink">NOSSOS SERVIÇOS</a></li>
+                    <li class="navItem"><a href="#" class="navLink">NOSSOS SERVIÇOS</a></li>
                     <li class="navItem"><a href="#" class="navLink">SOBRE A CLÍNICA</a></li>
                     <li class="navItem"><a href="#" class="navLink">ENTRE EM CONTATO</a></li>
-                    <li class="navItem"><a href="agende.html" class="navLink">AGENDE AGORA</a></li>
-                    <li class="navItem"><a href="#" class="navLink">Login</a></li>
+                    <li class="navItem"><a href="index.html" class="navLink">AGENDE AGORA</a></li>
+                    <li class="navItem"><a href="login.html" class="navLink">LOGIN</a></li>
                 </ul>
                 
             </div>
@@ -51,13 +51,33 @@
     <main><form action="">
         <h3>Consultar Agendamento</h3>
         <div class="input"><label for="">E-mail</label>
-            <input type="text" name="" id=""></div>
+            <input type="email" name="" id="email"></div>
+
             <div class="input"><label for="">Senha</label>
-            <input type="password" name="" id=""></div>
+            <input type="password" name="" id="senha"></div>
         <div class="input"><label for=""id=""></div>
         
         
-        <button>Consultar</button>
+        <button onclick="validarCadastro()" type="button">Consultar</button>
     </form></main>
+    <script>
+        
+
+        function validarCadastro(){
+            //Login:admin@admin.com
+            //Senha:"1234"
+        const email = document.getElementById("email").value
+        const senha = document.getElementById("senha").value
+            if(email === "admin@admin.com" && senha === "1234"){
+
+                window.location.href = "agendamentos.html"
+
+            }else{
+                alert("Login incorreto")
+                console.log(email);
+                console.log(senha);
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 function validarFormulario() {
     var agendamento = {}
     agendamento.data = document.getElementById("data").value;
