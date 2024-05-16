@@ -15,7 +15,7 @@ function validarFormulario() {
         return false;
     }
 // Pegar agendamentos existentes do localStorage
-    var agendamentos = JSON.parse(localStorage.getItem('agendamentos') || 'Sem Agendamentos');
+    var agendamentos = []
     
     // Adicionar o novo agendamento
     agendamentos.push(agendamento);
