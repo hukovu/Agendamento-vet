@@ -58,25 +58,35 @@
         <input type="text" name="" id="nomepet"></div>
 
         <div class="input"><label for="">CPF ou numero de matrícula:</label>
-        <input type="text" name="" id="cpf"></div> 
+        <input type="text" name="" id="cpf" maxlength="14"></div> 
 
         <div class="input"><label for="">E-mail:</label>
-        <input type="text" name="" id="e-mail"></div>
+        <input type="email" name="" id="e-mail" ></div>
 
         <div class="input"><label for="">Número para contato:</label>
-        <input type="text" name="" id="telefone"></div>
+        <input type="text" name="" id="telefone" maxlength="15"></div>
         
-        <div class="input"><label for="">Horário desejado:</label>
-        <input type="time" name="" id="horario"></div>
+        <div class="input"><label for="">Dia desejado:</label>
+            <input type="date" name="" id="data"></div>
+        
+            <div class="input">
+                <label for="horario">Horário:</label>
+                <select id="horario" name="horario">
+                    <option value="">Selecione o horário</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                </select>
+            </div>
 
         <div class="input"><label for="">Carteira de Vacinação:</label>
         <input type="file" name="" id="vacinas"></div>
         
-        <div class="input"><label for="">Dia desejado:</label>
-        <input type="date" name="" id="data"></div>
+    
         
         
-        <button onclick="validarFormulario()"  type="button">Agendar consulta</button>
+        <button onclick="validarFormulario()"  type="submit">Agendar consulta</button>
     </form></main>
     <script src="./set.js"></script>
 </body>
