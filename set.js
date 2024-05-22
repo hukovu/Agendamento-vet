@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Aplicando mascara para cpf e telefone
 function aplicarMascaraCPF(event) {
-    let value = event.target.value.replace(/\D/g, ''); // Remove all non-digit characters
+    let value = event.target.value.replace(/\D/g, '');
     if (value.length <= 11) {
         value = value.replace(/(\d{3})(\d)/, '$1.$2');
         value = value.replace(/(\d{3})(\d)/, '$1.$2');
@@ -16,7 +16,7 @@ function aplicarMascaraCPF(event) {
 }
 //Aplicando mascara para cpf e telefone
 function aplicarMascaraTelefone(event) {
-    let value = event.target.value.replace(/\D/g, ''); // Remove all non-digit characters
+    let value = event.target.value.replace(/\D/g, '');
     if (value.length <= 11) {
         value = value.replace(/(\d{2})(\d)/, '($1) $2');
         value = value.replace(/(\d{5})(\d)/, '$1-$2');
@@ -36,8 +36,8 @@ function validarFormulario() {
     agendamento.nome = nome.value
     const cpf = document.getElementById("cpf");
     agendamento.cpf = cpf.value
-    const vacinas = document.getElementById("vacinas");
-    agendamento.vacinas = vacinas.value
+    const serviço = document.getElementById("serviço");
+    agendamento.serviço = serviço.value
     const telefone = document.getElementById("telefone");
     agendamento.telefone = telefone.value
     const email = document.getElementById("e-mail");
@@ -50,8 +50,9 @@ function validarFormulario() {
  
 
     // Adicione aqui suas condições de validação, por exemplo:
-    if (agendamento.data === "" || agendamento.nome === "" || agendamento.cpf === ""  || agendamento.telefone ==="" || agendamento.email ==="" || agendamento.horario ==="" || agendamento.nomepet ==="") {
-        alert("Por favor, preencha todos os campos.");
+    if (agendamento.data === "" || agendamento.nome === "" || agendamento.cpf === ""  || agendamento.telefone ==="" || agendamento.email ==="" || agendamento.horario ==="" || agendamento.nomepet ===""
+    || agendamento.serviço === "") {
+
         return false;
     }else{
         alert("Agendado com Sucesso");
@@ -62,6 +63,7 @@ function validarFormulario() {
         email.value = "";
         horario.value = "";
         nomepet.value = "";
+        serviço.value = "";
 
     }
     // Pegar agendamentos existentes do localStorage

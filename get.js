@@ -15,6 +15,7 @@ const mostrarMensagens = () => {
                 <p>CPF ou Número de Matrícula: ${escapeHTML(agendamento.cpf)}</p>
                 <p>E-mail: ${escapeHTML(agendamento.email)}</p>
                 <p>Número para Contato: ${escapeHTML(agendamento.telefone)}</p>
+                <p>Serviço Desejado: ${escapeHTML(agendamento.serviço)}</p>
                 <p>Horário Desejado: ${escapeHTML(agendamento.horario)}</p>
                 <p>Dia Desejado: ${escapeHTML(agendamento.data)}</p>
             `;

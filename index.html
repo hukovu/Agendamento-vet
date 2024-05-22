@@ -51,40 +51,46 @@
     <main><form action="">
         <h3>Agendamento de consultas</h3>
 
-        <div class="input"><label for="">Nome do responsavel:</label>
-        <input type="text" name="" id="nome"></div>
+        <div class="input"><label for="">Nome do responsavel: <span class="required">*</span></label>
+        <input type="text" name="" id="nome" placeholder="Ex: João Oliveira" required></div>
         
-        <div class="input"><label for="">Nome do PET:</label>
-        <input type="text" name="" id="nomepet"></div>
+        <div class="input"><label for="">Nome do PET: <span class="required">*</span></label>
+        <input type="text" name="" id="nomepet"placeholder="Ex: Aurora" required></div>
 
-        <div class="input"><label for="">CPF ou numero de matrícula:</label>
-        <input type="text" name="" id="cpf" maxlength="14"></div> 
+        <div class="input"><label for="">CPF ou numero de matrícula: <span class="required">*</span></label>
+        <input type="text" name="" id="cpf" maxlength="14" placeholder="Ex:123.123.123-12" required></div> 
 
-        <div class="input"><label for="">E-mail:</label>
-        <input type="email" name="" id="e-mail" ></div>
+        <div class="input"><label for="">E-mail: <span class="required">*</span></label>
+        <input type="email" name="" id="e-mail" placeholder="Ex: admin@admin.com" required></div>
 
-        <div class="input"><label for="">Número para contato:</label>
-        <input type="text" name="" id="telefone" maxlength="15"></div>
+        <div class="input"><label for="">Número para contato: <span class="required">*</span></label>
+        <input type="text" name="" id="telefone" maxlength="15" placeholder="Ex: (83)1234-1234" required></div>
         
-        <div class="input"><label for="">Dia desejado:</label>
-            <input type="date" name="" id="data"></div>
+        <div class="input">
+         <label for="">Serviços: <span class="required">*</span></label>
+        <select id="serviço" name="serviço" required>
+                <option value="">Selecione o Serviço</option>
+                <option value="consulta">Consulta</option>
+                <option value="Ultrassom">Ultrassom</option>
+                <option value="Raio-X">Raio-X</option>
+                <option value="Vacinação">Vacinação</option>
+                <option value="Cirurgias">Cirurgias</option>
+                <option value="Exames hematológicos">Exames hematológicos</option>
+        </select>
+        
+        <div class="input"><label for="">Dia desejado: <span class="required">*</span></label>
+            <input type="date" name="" id="data" required></div>
         
             <div class="input">
-                <label for="horario">Horário:</label>
-                <select id="horario" name="horario">
+                <label for="horario">Horário: <span class="required">*</span></label>
+                <select id="horario" name="horario" required>
                     <option value="">Selecione o horário</option>
                     <option value="14:00">14:00</option>
                     <option value="15:00">15:00</option>
                     <option value="16:00">16:00</option>
                     <option value="17:00">17:00</option>
                 </select>
-            </div>
-
-        <div class="input"><label for="">Carteira de Vacinação:</label>
-        <input type="file" name="" id="vacinas"></div>
-        
-    
-        
+            </div>        
         
         <button onclick="validarFormulario()"  type="submit">Agendar consulta</button>
     </form></main>
