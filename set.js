@@ -1,10 +1,49 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const dateInput = document.getElementById('data');
+
+    dateInput.addEventListener('input', () => {
+        const selectedDate = new Date(dateInput.value);
+        const dayOfWeek = selectedDate.getUTCDay();
+
+         // Função para verificar se um dia é fim de semana
+        if (dayOfWeek === 6 || dayOfWeek === 0) {
+            alert('Sábados e domingos não são permitidos. Por favor, escolha outro dia.');
+            dateInput.value = ''; // Clear the input value
+        }
+    });
+    // Função para definir o atributo "min" e "max" para o campo de data
+    const setMinMaxDate = () => {
+        const today = new Date();
+        const maxDate = new Date(today.getFullYear() + 1, 11, 31); // 1 year ahead
+        dateInput.setAttribute('min', today.toISOString().split('T')[0]);
+        dateInput.setAttribute('max', maxDate.toISOString().split('T')[0]);
+    };
+
+    // Função para desabilitar fins de semana
+    const disableWeekends = (event) => {
+        const selectedDate = new Date(event.target.value);
+        if (isWeekend(selectedDate)) {
+            alert('Sábados e domingos não são permitidos. Por favor, escolha outro dia.');
+            event.target.value = ''; // Clear the input value
+        }
+    };
+
+    // Define o min e max date quando a página carrega
+    setMinMaxDate();
+
+    // Adiciona o event listener para verificar a data selecionada
+    dateInput.addEventListener('input', disableWeekends);
+});
+
+
+
 //Aplicando mascara para cpf e telefone
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('cpf').addEventListener('input', aplicarMascaraCPF);
     document.getElementById('telefone').addEventListener('input', aplicarMascaraTelefone);
 });
 
-//Aplicando mascara para cpf e telefone
+//Aplicando mascara para cpf 
 function aplicarMascaraCPF(event) {
     let value = event.target.value.replace(/\D/g, '');
     if (value.length <= 11) {
@@ -14,7 +53,7 @@ function aplicarMascaraCPF(event) {
     }
     event.target.value = value;
 }
-//Aplicando mascara para cpf e telefone
+//Aplicando mascara para telefone
 function aplicarMascaraTelefone(event) {
     let value = event.target.value.replace(/\D/g, '');
     if (value.length <= 11) {

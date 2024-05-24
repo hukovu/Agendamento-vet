@@ -149,14 +149,27 @@ button {
 
 .card {
     background-color: #f8f9fa;
+    border: 2px solid red;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     height: 300px;
     width: 300px;
     margin-bottom: 20px;
-   
-    height: 200px; 
+    height: 240px; 
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete-button:hover {
+    background-color: darkred;
 }
 
 .grid{
@@ -166,7 +179,6 @@ button {
     padding: 20px;
     gap: 15px;
 }
-
 
 main {
     display: flex;

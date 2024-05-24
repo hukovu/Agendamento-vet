@@ -6,7 +6,7 @@ const mostrarMensagens = () => {
 
     // Verifica se agendamentos é um array
     if (Array.isArray(agendamentos)) {
-        agendamentos.forEach(agendamento => {
+        agendamentos.forEach((agendamento, index) => {
             const card = document.createElement('div');
             card.classList.add('card'); // Adiciona a classe 'card' ao elemento div
             card.innerHTML = `
@@ -18,8 +18,17 @@ const mostrarMensagens = () => {
                 <p>Serviço Desejado: ${escapeHTML(agendamento.serviço)}</p>
                 <p>Horário Desejado: ${escapeHTML(agendamento.horario)}</p>
                 <p>Dia Desejado: ${escapeHTML(agendamento.data)}</p>
+                <button class="delete-button" data-index="${index}">Excluir</button>
             `;
             main.appendChild(card);
+        });
+
+        // Adiciona eventos de clique aos botões de excluir
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-index');
+                excluirAgendamento(index);
+            });
         });
     }
 }
@@ -29,6 +38,16 @@ const escapeHTML = (str) => {
     const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
+}
+
+// Função para excluir agendamento
+const excluirAgendamento = (index) => {
+    const agendamentos = JSON.parse(localStorage.getItem('agendamentos') || '[]');
+    if (Array.isArray(agendamentos)) {
+        agendamentos.splice(index, 1); // Remove o agendamento do array
+        localStorage.setItem('agendamentos', JSON.stringify(agendamentos)); // Atualiza o localStorage
+        mostrarMensagens(); // Atualiza a exibição
+    }
 }
 
 // Chama a função para exibir as mensagens quando a página carrega
