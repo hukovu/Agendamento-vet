@@ -1,212 +1,238 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-    background-image: url("bg.svg");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(177, 177, 177, 0.404); 
-    z-index: -1; 
+  background-image: url("bg.svg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
-    background: rgba(255, 255, 255, 0.9); 
-    border-bottom: 2px solid #ccc; 
-    z-index: 1; 
-    position: relative;
-    width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid #ccc;
+  z-index: 1;
+  position: relative;
+  width: 100%;
 }
 
 .navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 10px 30px;
 }
 
 .logo img {
-    max-width: 125px;
-    height: auto;
-    margin-right: 15px;
+  max-width: 100px;
+  height: auto;
+  margin-right: 15px;
 }
 
 .navTitulo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: auto;
 }
 
-.navTitulo h1, .navTitulo h2 {
-    font-size: 20px;
-    color: rgb(38, 36, 36);
+.navTitulo h1,
+.navTitulo h2 {
+  font-size: 20px;
+  color: rgb(38, 36, 36);
 }
 
 .navList {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navList ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+  display: flex;
+  justify-content: center;
+  list-style: none;
 }
 
 .navItem {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 .navItem a:hover {
-    color: #ff0000;
-    font-weight: bold;
-    transition: color 0.9s;
+  color: #ff0000;
+  font-weight: bold;
+  transition: color 0.9s;
 }
 
 .navLink {
-    text-decoration: none;
-    color: rgb(100, 95, 95);
-    font-weight: 400;
-    font-size: 12px;
+  text-decoration: none;
+  color: rgb(100, 95, 95);
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .navButton button a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
 }
 
 .navButton button:hover {
-    background: #32ad80;
-    transition: 1s;
+  background: #32ad80;
+  transition: 1s;
 }
 
 .mobileMenuIcon {
-    display: none;
+  display: none;
 }
 
 .mobileMenu {
-    display: none;
+  display: none;
 }
 
 h3 {
-    font-size: 23px;
-    margin-bottom: 10px;
+  font-size: 23px;
+  margin-bottom: 10px;
 }
 
 form {
-    margin: 15px auto;
-    width: 700px;
-    background-color: #3F893D;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    border-radius: 22px;
-    color: #fff;
-    z-index: 1; 
+  margin: 15px auto;
+  width: 700px;
+  background-color: #3f893d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 22px;
+  color: #fff;
+  z-index: 1;
 }
 
 input {
-    width: 250px;
+  width: 250px;
 }
 
 .input {
-    margin: 10px auto;
-    display: flex;
-    flex-direction: column;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
-    border-radius: 22px;
-    padding: 12px;
+  border-radius: 22px;
+  padding: 12px;
 }
 
 .card-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .card {
-    background-color: #f8f9fa;
-    border: 2px solid red;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    height: 300px;
-    width: 300px;
-    margin-bottom: 20px;
-    height: 240px; 
+  background-color: #f8f9fa;
+  border: 2px solid red;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 20px;
 }
 
 .delete-button {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 3px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 .delete-button:hover {
-    background-color: darkred;
+  background-color: darkred;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: auto;
-    padding: 20px;
-    gap: 15px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  padding: 20px;
+  gap: 15px;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 100px); 
-    z-index: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  z-index: 1;
 }
 
 main button {
-    background-color: #2a9d8f;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 main button:hover {
-    background-color: #7b9eac;
+  background-color: #7b9eac;
 }
 
-.required{
-    color: red;
+.required {
+  color: red;
 }
 
 .example {
-    font-size: 12px;
-    color: #666;
+  font-size: 12px;
+  color: #666;
+}
+
+@media (width <= 768px) {
+  main {
+    padding: 32px;
+  }
+  input, select{
+    padding: 8px;
+  }
+  .logo img {
+    max-width: 64px;
+    height: auto;
+    margin-right: 15px;
+}
+.mobileMenuIcon  {
+    display: block;
+  }
+  
+  .mobileMenuIcon a {
+    color: red;
+    font-size: 24px;
+  }
+
+  .mobileMenu ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+
+  .navList {
+    display: none;
+  }
+
+.navTitulo h1, h2 {
+    display: none;
+}
+
 }

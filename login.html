@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agende Agora</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -30,23 +31,22 @@
                 </ul>
                 
             </div>
+            
+            <div class="mobileMenu">
+                <ul>
+                    <li class="navItem"><a href="#" class="navLink">Home</a></li>
+                    <li class="navItem"><a href="#" class="navLink">Clinica Veterinaria</a></li>
+                    <li class="navItem"><a href="#" class="navLink">Contato</a></li>
+                </ul>
+    
+                
+            </div>
 
             <div class="mobileMenuIcon">
-                <button onclick="menuShow()"><i class="fa-solid fa-bars-staggered"></i></button>
+                <a href="#" onclick="menuShow()"><i class="fa fa-bars"></i></a>
             </div>
         </nav>
 
-        <div class="mobileMenu">
-            <ul>
-                <li class="navItem"><a href="#" class="navLink">Home</a></li>
-                <li class="navItem"><a href="#" class="navLink">Clinica Veterinaria</a></li>
-                <li class="navItem"><a href="#" class="navLink">Contato</a></li>
-            </ul>
-
-            <div class="navButton">
-                <button><a href="#">Entrar</a></button>
-            </div>
-        </div>
     </header>
     <main><form action="">
         <h3>Consultar Agendamento</h3>
@@ -79,5 +79,6 @@
             }
         }
     </script>
+    <script src="index.js"></script>
 </body>
 </html>

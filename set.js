@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     // Função para definir o atributo "min" e "max" para o campo de data
-    const setMinMaxDate = () => {
+        const setMinMaxDate = () => {
         const today = new Date();
         const maxDate = new Date(today.getFullYear() + 1, 11, 31); // 1 year ahead
         dateInput.setAttribute('min', today.toISOString().split('T')[0]);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Aplicando mascara para cpf e telefone
-document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('cpf').addEventListener('input', aplicarMascaraCPF);
     document.getElementById('telefone').addEventListener('input', aplicarMascaraTelefone);
 });
