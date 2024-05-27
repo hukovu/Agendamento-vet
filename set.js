@@ -1,25 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dateInput = document.getElementById('data');
+    const horarioInput = document.getElementById('horario');
 
     dateInput.addEventListener('input', () => {
         const selectedDate = new Date(dateInput.value);
         const dayOfWeek = selectedDate.getUTCDay();
 
-         // Função para verificar se um dia é fim de semana
         if (dayOfWeek === 6 || dayOfWeek === 0) {
             alert('Sábados e domingos não são permitidos. Por favor, escolha outro dia.');
             dateInput.value = ''; // Clear the input value
         }
     });
-    // Função para definir o atributo "min" e "max" para o campo de data
-        const setMinMaxDate = () => {
+
+    const setMinMaxDate = () => {
         const today = new Date();
         const maxDate = new Date(today.getFullYear() + 1, 11, 31); // 1 year ahead
         dateInput.setAttribute('min', today.toISOString().split('T')[0]);
         dateInput.setAttribute('max', maxDate.toISOString().split('T')[0]);
     };
 
-    // Função para desabilitar fins de semana
     const disableWeekends = (event) => {
         const selectedDate = new Date(event.target.value);
         if (isWeekend(selectedDate)) {
@@ -28,22 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Define o min e max date quando a página carrega
+    const isWeekend = (date) => {
+        const day = date.getUTCDay();
+        return day === 6 || day === 0;
+    };
+
     setMinMaxDate();
-
-    // Adiciona o event listener para verificar a data selecionada
     dateInput.addEventListener('input', disableWeekends);
-});
 
-
-
-//Aplicando mascara para cpf e telefone
-    document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('cpf').addEventListener('input', aplicarMascaraCPF);
     document.getElementById('telefone').addEventListener('input', aplicarMascaraTelefone);
 });
 
-//Aplicando mascara para cpf 
 function aplicarMascaraCPF(event) {
     let value = event.target.value.replace(/\D/g, '');
     if (value.length <= 11) {
@@ -53,7 +48,7 @@ function aplicarMascaraCPF(event) {
     }
     event.target.value = value;
 }
-//Aplicando mascara para telefone
+
 function aplicarMascaraTelefone(event) {
     let value = event.target.value.replace(/\D/g, '');
     if (value.length <= 11) {
@@ -66,35 +61,44 @@ function aplicarMascaraTelefone(event) {
     event.target.value = value;
 }
 
-const agendamentos = []
 function validarFormulario() {
-    let agendamento = {}
+    let agendamento = {};
     const data = document.getElementById("data");
-    agendamento.data = data.value
+    agendamento.data = data.value;
     const nome = document.getElementById("nome");
-    agendamento.nome = nome.value
+    agendamento.nome = nome.value;
     const cpf = document.getElementById("cpf");
-    agendamento.cpf = cpf.value
+    agendamento.cpf = cpf.value;
     const serviço = document.getElementById("serviço");
-    agendamento.serviço = serviço.value
+    agendamento.serviço = serviço.value;
     const telefone = document.getElementById("telefone");
-    agendamento.telefone = telefone.value
+    agendamento.telefone = telefone.value;
     const email = document.getElementById("e-mail");
-    agendamento.email = email.value
+    agendamento.email = email.value;
     const horario = document.getElementById("horario");
-    agendamento.horario = horario.value
+    agendamento.horario = horario.value;
     const nomepet = document.getElementById("nomepet");
-    agendamento.nomepet = nomepet.value
+    agendamento.nomepet = nomepet.value;
 
- 
-
-    // Adicione aqui suas condições de validação, por exemplo:
-    if (agendamento.data === "" || agendamento.nome === "" || agendamento.cpf === ""  || agendamento.telefone ==="" || agendamento.email ==="" || agendamento.horario ==="" || agendamento.nomepet ===""
-    || agendamento.serviço === "") {
-
+    if (agendamento.data === "" || agendamento.nome === "" || agendamento.cpf === "" || agendamento.telefone === "" || agendamento.email === "" || agendamento.horario === "" || agendamento.nomepet === "" || agendamento.serviço === "") {
         return false;
-    }else{
+    } else {
+        let agendamentos = JSON.parse(localStorage.getItem('agendamentos') || '[]');
+        
+        // Verifica se o horário já foi agendado
+        let horarioExistente = agendamentos.find(a => a.data === agendamento.data && a.horario === agendamento.horario);
+        if (horarioExistente) {
+            alert("Este horário já está agendado para a data selecionada. Por favor, escolha outro horário.");
+            return false;
+        }else{
+
+        // Adicionar o novo agendamento
+        agendamentos.push(agendamento);
+        localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+
         alert("Agendado com Sucesso");
+
+        // Limpa os campos do formulário
         data.value = "";
         nome.value = "";
         cpf.value = "";
@@ -104,17 +108,7 @@ function validarFormulario() {
         nomepet.value = "";
         serviço.value = "";
 
+        return true;
     }
-    // Pegar agendamentos existentes do localStorage
-    let agendamentos = JSON.parse(localStorage.getItem('agendamentos') || '[]');
-
-    // Adicionar o novo agendamento
-    agendamentos.push(agendamento);
-
-    // Armazenar de volta no localStorage
-    localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
-
-    console.log(agendamentos);
-
-    return true; // Se todas as validações passarem, o formulário será enviado.
+}
 }
