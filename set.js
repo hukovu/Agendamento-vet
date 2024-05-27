@@ -90,7 +90,7 @@ function validarFormulario() {
         if (horarioExistente) {
             alert("Este horário já está agendado para a data selecionada. Por favor, escolha outro horário.");
             return false;
-        }else{
+        }
 
         // Adicionar o novo agendamento
         agendamentos.push(agendamento);
@@ -110,5 +110,4 @@ function validarFormulario() {
 
         return true;
     }
-}
 }
