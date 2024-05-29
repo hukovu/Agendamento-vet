@@ -80,7 +80,7 @@ function validarFormulario() {
     const nomepet = document.getElementById("nomepet");
     agendamento.nomepet = nomepet.value;
     const especie = document.getElementById("especie");
-    agendamento.especie = especie.value
+    agendamento.especie = especie.value;
 
     if (agendamento.data === "" || agendamento.nome === "" || agendamento.cpf === "" || agendamento.telefone === "" || agendamento.email === "" || agendamento.horario === "" || agendamento.nomepet === "" || agendamento.serviço === "" || agendamento.especie === "") {
         return false;
@@ -92,6 +92,31 @@ function validarFormulario() {
         if (horarioExistente) {
             alert("Este horário já está agendado para a data selecionada. Por favor, escolha outro horário.");
             return false;
+        }
+
+        // Verifica se o serviço é 'cirurgia' e se houve uma cirurgia nos últimos 15 dias
+        if (agendamento.serviço.toLowerCase() === 'cirurgia') {
+            const dataAgendamento = new Date(agendamento.data);
+            const quinzeDiasAtras = new Date(dataAgendamento);
+            quinzeDiasAtras.setDate(dataAgendamento.getDate() - 15);
+            
+            let cirurgiaRecente = agendamentos.some(a => {
+                const dataAgendada = new Date(a.data);
+                return a.serviço.toLowerCase() === 'cirurgia' && 
+                       dataAgendada >= quinzeDiasAtras && 
+                       dataAgendada <= dataAgendamento;
+            });
+
+            if (cirurgiaRecente) {
+                alert("Só é possível agendar uma nova cirurgia após 15 dias da última. Por favor, escolha outra data.");
+                return false;
+            }
+
+            const diaSemana = dataAgendamento.getUTCDay();
+            if (diaSemana !== 1 && diaSemana !== 2) { // 1 = Segunda, 2 = Terça
+                alert("Cirurgias só podem ser agendadas nas segundas e terças-feiras. Por favor, escolha outro dia.");
+                return false;
+            }
         }
 
         // Adicionar o novo agendamento
