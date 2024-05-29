@@ -50,13 +50,10 @@
     <main><form action="">
         <h3>Agendamento de consultas</h3>
 
-        <div class="input"><label for="">Nome do responsavel: <span class="required">*</span></label>
+        <div class="input"><label for="">Nome do tutor(a) responsavel: <span class="required">*</span></label>
         <input type="text" name="" id="nome" placeholder="Ex: João Oliveira" required></div>
-        
-        <div class="input"><label for="">Nome do PET: <span class="required">*</span></label>
-        <input type="text" name="" id="nomepet"placeholder="Ex: Aurora" required></div>
 
-        <div class="input"><label for="">CPF ou numero de matrícula: <span class="required">*</span></label>
+        <div class="input"><label for="">CPF ou Número de matrícula: <span class="required">*</span></label>
         <input type="text" name="" id="cpf" maxlength="14" placeholder="Ex:123.123.123-12" required></div> 
 
         <div class="input"><label for="">E-mail: <span class="required">*</span></label>
@@ -65,11 +62,22 @@
         <div class="input"><label for="">Número para contato: <span class="required">*</span></label>
         <input type="text" name="" id="telefone" maxlength="15" placeholder="Ex: (83)1234-1234" required></div>
         
+        <div class="input"><label for="">Nome do PET: <span class="required">*</span></label>
+        <input type="text" name="" id="nomepet"placeholder="Ex: Aurora" required></div>
+
+        <div class="input"><label for="">Espécie do PET: <span class="required">*</span></label>
+        <select name="especie" id="especie" required>
+            <option value="Canino">Canino</option>
+            <option value="Felino">Felino</option>
+            <option value="Coelho">Coelho</option>
+            <option value="Caprino">Caprino</option>
+        </select>
+
         <div class="input">
          <label for="">Serviços: <span class="required">*</span></label>
         <select id="serviço" name="serviço" required>
                 <option value="">Selecione o Serviço</option>
-                <option value="consulta">Consulta</option>
+                <option value="Consulta">Consulta</option>
                 <option value="Ultrassom">Ultrassom</option>
                 <option value="Raio-X">Raio-X</option>
                 <option value="Vacinação">Vacinação</option>
@@ -89,6 +97,7 @@
                     <option value="16:00">16:00</option>
                     <option value="17:00">17:00</option>
                 </select>
+                
             </div>        
         
         <button onclick="validarFormulario()"  type="submit">Agendar consulta</button>

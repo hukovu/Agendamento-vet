@@ -79,8 +79,10 @@ function validarFormulario() {
     agendamento.horario = horario.value;
     const nomepet = document.getElementById("nomepet");
     agendamento.nomepet = nomepet.value;
+    const especie = document.getElementById("especie");
+    agendamento.especie = especie.value
 
-    if (agendamento.data === "" || agendamento.nome === "" || agendamento.cpf === "" || agendamento.telefone === "" || agendamento.email === "" || agendamento.horario === "" || agendamento.nomepet === "" || agendamento.serviço === "") {
+    if (agendamento.data === "" || agendamento.nome === "" || agendamento.cpf === "" || agendamento.telefone === "" || agendamento.email === "" || agendamento.horario === "" || agendamento.nomepet === "" || agendamento.serviço === "" || agendamento.especie === "") {
         return false;
     } else {
         let agendamentos = JSON.parse(localStorage.getItem('agendamentos') || '[]');
@@ -107,6 +109,7 @@ function validarFormulario() {
         horario.value = "";
         nomepet.value = "";
         serviço.value = "";
+        especie.value = "";
 
         return true;
     }

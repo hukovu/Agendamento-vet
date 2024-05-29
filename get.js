@@ -12,6 +12,7 @@ const mostrarMensagens = () => {
             card.innerHTML = `
                 <p>Nome do Responsável: ${escapeHTML(agendamento.nome)}</p>
                 <p>Nome do PET: ${escapeHTML(agendamento.nomepet)}</p>
+                <p>Especie do PET: ${escapeHTML(agendamento.especie)}</p>
                 <p>CPF ou Número de Matrícula: ${escapeHTML(agendamento.cpf)}</p>
                 <p>E-mail: ${escapeHTML(agendamento.email)}</p>
                 <p>Número para Contato: ${escapeHTML(agendamento.telefone)}</p>
